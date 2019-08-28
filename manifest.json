@@ -1,0 +1,37 @@
+{
+  "author": "cat.alucardo@gmail.com",
+  "manifest_version": 2,
+  "name": "dxf and tap thumbnails",
+  "version": "4.1",
+  "description": "Adds thumbnails to dxf & tap files even when in a .zip file. File:///* has autoplay with a stop and start button. <all_urls> have Ctrl+Context Menu on a url to add thumbnail.",
+  "permissions": ["menus","file:///*"],
+  "icons": {
+	"16": "dxf.png"
+  },
+  "background": {
+    "scripts": ["background.js"]
+  },
+  "content_scripts": [
+    {
+      "matches": [
+		"<all_urls>",
+        "file:///*"
+      ],
+      "js": [
+        "gcodethumbnail.min.js",
+        "gcodetogeometry.min.js",
+        "dxf.min.js",
+        "jszip.min.js",
+        "dxf_thumbnails.js"
+      ]
+    },
+    {
+      "matches": [
+        "file:///*"
+      ],
+      "js": [
+        "fileListDxfTapThumbnail.js"
+      ]
+    }
+  ]
+}

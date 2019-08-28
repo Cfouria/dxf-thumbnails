@@ -1,0 +1,12 @@
+firefox extension that:
+  searches <a> html element and downloads file
+  if src attribute has *.dxf or *.tap
+  if src attribute has *.zip it will
+  unzip and search for *.dxf and *.tap files before
+  it attempts to parse and then convert
+  Gcode(.tap) to an <img> and Dxf to an <svg>
+  which will then be appended to the original <a>
+
+quality of life changes:
+  autostarts on file:// protocol (with a delay between each <a> link) and adds start/stop buttons
+  added context menu on websites which says CTRL+contextmenu (script checks for href=*.dxf before it continues)
